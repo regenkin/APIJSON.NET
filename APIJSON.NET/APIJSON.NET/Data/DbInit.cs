@@ -29,8 +29,6 @@ namespace APIJSON.NET
                     ds.Add(d);
                 }
                 db.LoginDb.InsertRange(ds.ToArray());
-
-
             }
             
         }

@@ -154,7 +154,15 @@
                 {
                     string key = item.Key.Trim();
                     var role = _identitySvc.GetRole();
-                    if (!role.Update.Table.Contains(key, StringComparer.CurrentCultureIgnoreCase))
+                    //if (!role.Update.Table.Contains(key, StringComparer.CurrentCultureIgnoreCase))
+                    //{
+                    //    ht["code"] = "500";
+                    //    ht["msg"] = $"没权限修改{key}";
+                    //    break;
+                    //}
+                    string tablerole = role.Select.Table.FirstOrDefault(it => it == "*" || it.Equals(key, StringComparison.CurrentCultureIgnoreCase));
+
+                    if (string.IsNullOrEmpty(tablerole))
                     {
                         ht["code"] = "500";
                         ht["msg"] = $"没权限修改{key}";

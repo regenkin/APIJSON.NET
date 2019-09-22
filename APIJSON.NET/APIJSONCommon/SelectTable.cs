@@ -65,7 +65,15 @@
             var result = reflector.Invoke(new FuncList(), param);
             return result;
         }
-
+        /// <summary>
+        /// 转换sql语句
+        /// </summary>
+        /// <param name="subtable"></param>
+        /// <param name="page"></param>
+        /// <param name="count"></param>
+        /// <param name="query"></param>
+        /// <param name="json"></param>
+        /// <returns></returns>
         private string ToSql(string subtable, int page, int count, int query, string json)
         {
             JObject values = JObject.Parse(json);

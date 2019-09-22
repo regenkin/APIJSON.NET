@@ -82,7 +82,7 @@
             });
       
             app.UseJwtTokenMiddleware();
-            DbInit.Initialize(app);
+            //DbInit.Initialize(app);
         }
     }
 }
