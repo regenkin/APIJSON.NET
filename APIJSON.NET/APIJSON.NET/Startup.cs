@@ -58,6 +58,8 @@
             services.AddTransient<IIdentityService, IdentityService>();
             services.AddTransient<ITableMapper, TableMapper>();
 
+            //启用 IISIntegration 组件
+            services.Configure<IISOptions>(option => { option.ForwardClientCertificate = false; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
